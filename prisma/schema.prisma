@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// This generates a multitude of possible DTOs from each model in our schema
+// and writes them to the /dtos/ directory.  You should never uncomment this
+// unless you know what you're doing, otherwise you'll have a big mess on
+// your hands.
+generator nestgraphql {
+  provider = "prisma-nestjs-graphql"
+  output   = "../src/dtos"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime?  @updatedAt
+  name      String
+  resources Resource[]
+}
+
+model Resource {
+  id           String       @id @default(uuid())
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime?    @updatedAt
+  resourceType ResourceType
+  user         User?        @relation(fields: [userId], references: [id])
+  userId       String?
+}
+
+enum ResourceType {
+  Ec2Instance
+}

@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+
+set -eu -o pipefail
+
+# convenience script to set up the local environment for development
+
+# root level of the repository.
+repository_root=$(git rev-parse --show-toplevel)
+cd "$repository_root"
+
+# any time we need a new project dependency that isn't some node
+# package we should add it to this list
+dependencies=(git docker docker-compose yarn)
+
+## Functions
+
+check_dependencies() {
+    # runs through a list of dependencies that should be installed
+    # on the developer's machine before trying to use the script.
+    echo "Checking dependencies..."
+
+    for dependency in "${dependencies[@]}"; do
+	if ! command -v "$dependency" &> /dev/null; then
+	    echo "$dependency not found. install it!" # bruh
+	    exit 1
+	fi
+    done
+
+    # checks to see if the docker daemon is already running.
+    docker version >/dev/null
+
+    docker compose version >/dev/null
+
+    docker compose ps -q >/dev/null || {
+        ret=$?
+        if (( ret )); then
+            (( ret = 14 )) && echo 'Hint: can you access docker-compose.yml ?'
+            exit $ret
+        fi
+    }
+
+    echo "...dependency checks passed."
+}
+
+load_environment() {
+    # Reads the .env file and exports each value into the environment.
+    echo "Loading environment variables..."
+
+    set -a
+    . .env
+    set +a
+
+    echo "...environment variables loaded."
+}
+
+unload_environment() {
+    # reads the .env file and unsets each value from the environment
+    echo "Unloading environment variables..."
+
+    while read -r environment_variable; do
+	echo "unsetting $environment_variable ..."
+	unset "$environment_variable"
+    done < .env
+
+    echo "...environment variables unloaded."
+}
+
+instantiate_docker_environment() {
+    # spins up docker containers needed for testing and active development
+    echo "Instantiating docker containers for local resources..."
+
+    docker compose down
+
+    docker compose up -d --wait
+
+    echo "...docker containers instantiated."
+}
+
+
+migrate_sql_database() {
+    echo "Migrating database schema..."
+    # checks to see if the prisma client has already been generated
+    if [[ ! -f ./node_modules/prisma ]]; then
+	yarn prisma generate
+    fi
+
+    yarn prisma migrate dev
+
+    echo "...database schema migrated."
+}
+
+up() {
+    echo "Setting up Development Environment"
+
+    check_dependencies
+    load_environment
+    instantiate_docker_environment
+    local n=5
+    echo "Waiting $n seconds for postgres instance to start accepting connections."
+    sleep "$n"
+    migrate_sql_database
+
+    echo "You're ready to go!"
+
+}
+
+down() {
+    echo "Tearing down Development Environment"
+
+    unload_environment
+    docker-compose down
+
+    echo "You're all done!"
+}
+
+usage() {
+    echo "Usage: $0 [ up | down ]" 1>&2
+    exit 1
+}
+
+## Entrypoint
+[[ $# -eq 1 ]] || usage
+
+case $1 in
+    up)
+        up
+        ;;
+    down)
+        down
+        ;;
+    *)
+        usage
+        ;;
+esac

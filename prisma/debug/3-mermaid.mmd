@@ -1,0 +1,24 @@
+erDiagram
+
+        ResourceType {
+            Ec2Instance Ec2Instance
+        }
+    
+  "User" {
+    String id "🗝️"
+    DateTime createdAt 
+    DateTime updatedAt "❓"
+    String name 
+    }
+  
+
+  "Resource" {
+    String id "🗝️"
+    DateTime createdAt 
+    DateTime updatedAt "❓"
+    ResourceType resourceType 
+    }
+  
+    "User" o{--}o "Resource" : "resources"
+    "Resource" o|--|| "ResourceType" : "enum:resourceType"
+    "Resource" o|--|| "User" : "user"
