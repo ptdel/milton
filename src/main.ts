@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 import { ValidationPipe } from '@nestjs/common';
-import { DatabaseService } from './db/database.service';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
@@ -17,13 +16,13 @@ async function bootstrap() {
 
   /* Documentation */
   const swaggerConfig = new DocumentBuilder()
-    .setTitle("Milton, the Self-Service Catalog")
-    .setDescription("The ratio of people to cake is too big.")
-    .setVersion("1.0.0")
+    .setTitle('Milton, the Self-Service Catalog')
+    .setDescription('The ratio of people to cake is too big.')
+    .setVersion('1.0.0')
     .build();
 
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup('api', app, swaggerDocument)
+  SwaggerModule.setup('api', app, swaggerDocument);
 
   /* Database */
   app.enableShutdownHooks();

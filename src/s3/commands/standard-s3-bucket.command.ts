@@ -1,3 +1,6 @@
+import { ApiProperty } from '@nestjs/swagger';
+import { IsString } from 'class-validator';
+
 export class StandardS3BucketCommand {
   /**
    * Creates a regular as-is s3 bucket given just a name.
@@ -10,5 +13,11 @@ export class StandardS3BucketCommand {
    *
    * @param name - A name to give to the s3 bucket.
    */
-  constructor(public readonly name: string) {}
+  @IsString()
+  @ApiProperty({ type: String })
+  name: string;
+
+  constructor(partial: Partial<StandardS3BucketCommand>) {
+    Object.assign(this, partial);
+  }
 }
