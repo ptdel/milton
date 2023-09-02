@@ -7,28 +7,27 @@ import { ResourceListRelationFilter } from '../resource/resource-list-relation-f
 
 @InputType()
 export class UserWhereInput {
+  @Field(() => [UserWhereInput], { nullable: true })
+  AND?: Array<UserWhereInput>;
 
-    @Field(() => [UserWhereInput], {nullable:true})
-    AND?: Array<UserWhereInput>;
+  @Field(() => [UserWhereInput], { nullable: true })
+  OR?: Array<UserWhereInput>;
 
-    @Field(() => [UserWhereInput], {nullable:true})
-    OR?: Array<UserWhereInput>;
+  @Field(() => [UserWhereInput], { nullable: true })
+  NOT?: Array<UserWhereInput>;
 
-    @Field(() => [UserWhereInput], {nullable:true})
-    NOT?: Array<UserWhereInput>;
+  @Field(() => StringFilter, { nullable: true })
+  id?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    id?: StringFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+  @Field(() => DateTimeNullableFilter, { nullable: true })
+  updatedAt?: DateTimeNullableFilter;
 
-    @Field(() => DateTimeNullableFilter, {nullable:true})
-    updatedAt?: DateTimeNullableFilter;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
-
-    @Field(() => ResourceListRelationFilter, {nullable:true})
-    resources?: ResourceListRelationFilter;
+  @Field(() => ResourceListRelationFilter, { nullable: true })
+  resources?: ResourceListRelationFilter;
 }

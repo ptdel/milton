@@ -8,28 +8,27 @@ import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
 
 @InputType()
 export class ResourceScalarWhereInput {
+  @Field(() => [ResourceScalarWhereInput], { nullable: true })
+  AND?: Array<ResourceScalarWhereInput>;
 
-    @Field(() => [ResourceScalarWhereInput], {nullable:true})
-    AND?: Array<ResourceScalarWhereInput>;
+  @Field(() => [ResourceScalarWhereInput], { nullable: true })
+  OR?: Array<ResourceScalarWhereInput>;
 
-    @Field(() => [ResourceScalarWhereInput], {nullable:true})
-    OR?: Array<ResourceScalarWhereInput>;
+  @Field(() => [ResourceScalarWhereInput], { nullable: true })
+  NOT?: Array<ResourceScalarWhereInput>;
 
-    @Field(() => [ResourceScalarWhereInput], {nullable:true})
-    NOT?: Array<ResourceScalarWhereInput>;
+  @Field(() => StringFilter, { nullable: true })
+  id?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    id?: StringFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+  @Field(() => DateTimeNullableFilter, { nullable: true })
+  updatedAt?: DateTimeNullableFilter;
 
-    @Field(() => DateTimeNullableFilter, {nullable:true})
-    updatedAt?: DateTimeNullableFilter;
+  @Field(() => EnumResourceTypeFilter, { nullable: true })
+  resourceType?: EnumResourceTypeFilter;
 
-    @Field(() => EnumResourceTypeFilter, {nullable:true})
-    resourceType?: EnumResourceTypeFilter;
-
-    @Field(() => StringNullableFilter, {nullable:true})
-    userId?: StringNullableFilter;
+  @Field(() => StringNullableFilter, { nullable: true })
+  userId?: StringNullableFilter;
 }

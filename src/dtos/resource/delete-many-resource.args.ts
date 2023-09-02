@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyResourceArgs {
-
-    @Field(() => ResourceWhereInput, {nullable:true})
-    @Type(() => ResourceWhereInput)
-    where?: ResourceWhereInput;
+  @Field(() => ResourceWhereInput, { nullable: true })
+  @Type(() => ResourceWhereInput)
+  where?: ResourceWhereInput;
 }

@@ -6,19 +6,18 @@ import { ResourceOrderByRelationAggregateInput } from '../resource/resource-orde
 
 @InputType()
 export class UserOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+  @Field(() => SortOrderInput, { nullable: true })
+  updatedAt?: SortOrderInput;
 
-    @Field(() => SortOrderInput, {nullable:true})
-    updatedAt?: SortOrderInput;
+  @Field(() => SortOrder, { nullable: true })
+  name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
-
-    @Field(() => ResourceOrderByRelationAggregateInput, {nullable:true})
-    resources?: ResourceOrderByRelationAggregateInput;
+  @Field(() => ResourceOrderByRelationAggregateInput, { nullable: true })
+  resources?: ResourceOrderByRelationAggregateInput;
 }

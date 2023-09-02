@@ -7,12 +7,11 @@ import { UserCreateWithoutResourcesInput } from './user-create-without-resources
 
 @InputType()
 export class UserCreateOrConnectWithoutResourcesInput {
+  @Field(() => UserWhereUniqueInput, { nullable: false })
+  @Type(() => UserWhereUniqueInput)
+  where!: Prisma.AtLeast<UserWhereUniqueInput, 'id'>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: Prisma.AtLeast<UserWhereUniqueInput, 'id'>;
-
-    @Field(() => UserCreateWithoutResourcesInput, {nullable:false})
-    @Type(() => UserCreateWithoutResourcesInput)
-    create!: UserCreateWithoutResourcesInput;
+  @Field(() => UserCreateWithoutResourcesInput, { nullable: false })
+  @Type(() => UserCreateWithoutResourcesInput)
+  create!: UserCreateWithoutResourcesInput;
 }

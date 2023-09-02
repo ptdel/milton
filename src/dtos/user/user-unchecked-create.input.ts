@@ -4,19 +4,20 @@ import { ResourceUncheckedCreateNestedManyWithoutUserInput } from '../resource/r
 
 @InputType()
 export class UserUncheckedCreateInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
-
-    @Field(() => ResourceUncheckedCreateNestedManyWithoutUserInput, {nullable:true})
-    resources?: ResourceUncheckedCreateNestedManyWithoutUserInput;
+  @Field(() => ResourceUncheckedCreateNestedManyWithoutUserInput, {
+    nullable: true,
+  })
+  resources?: ResourceUncheckedCreateNestedManyWithoutUserInput;
 }

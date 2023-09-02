@@ -9,31 +9,30 @@ import { UserNullableRelationFilter } from '../user/user-nullable-relation-filte
 
 @InputType()
 export class ResourceWhereInput {
+  @Field(() => [ResourceWhereInput], { nullable: true })
+  AND?: Array<ResourceWhereInput>;
 
-    @Field(() => [ResourceWhereInput], {nullable:true})
-    AND?: Array<ResourceWhereInput>;
+  @Field(() => [ResourceWhereInput], { nullable: true })
+  OR?: Array<ResourceWhereInput>;
 
-    @Field(() => [ResourceWhereInput], {nullable:true})
-    OR?: Array<ResourceWhereInput>;
+  @Field(() => [ResourceWhereInput], { nullable: true })
+  NOT?: Array<ResourceWhereInput>;
 
-    @Field(() => [ResourceWhereInput], {nullable:true})
-    NOT?: Array<ResourceWhereInput>;
+  @Field(() => StringFilter, { nullable: true })
+  id?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    id?: StringFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+  @Field(() => DateTimeNullableFilter, { nullable: true })
+  updatedAt?: DateTimeNullableFilter;
 
-    @Field(() => DateTimeNullableFilter, {nullable:true})
-    updatedAt?: DateTimeNullableFilter;
+  @Field(() => EnumResourceTypeFilter, { nullable: true })
+  resourceType?: EnumResourceTypeFilter;
 
-    @Field(() => EnumResourceTypeFilter, {nullable:true})
-    resourceType?: EnumResourceTypeFilter;
+  @Field(() => StringNullableFilter, { nullable: true })
+  userId?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    userId?: StringNullableFilter;
-
-    @Field(() => UserNullableRelationFilter, {nullable:true})
-    user?: UserNullableRelationFilter;
+  @Field(() => UserNullableRelationFilter, { nullable: true })
+  user?: UserNullableRelationFilter;
 }

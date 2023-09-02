@@ -7,19 +7,20 @@ import { ResourceUncheckedUpdateManyWithoutUserNestedInput } from '../resource/r
 
 @InputType()
 export class UserUncheckedUpdateInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
 
-    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
-
-    @Field(() => ResourceUncheckedUpdateManyWithoutUserNestedInput, {nullable:true})
-    resources?: ResourceUncheckedUpdateManyWithoutUserNestedInput;
+  @Field(() => ResourceUncheckedUpdateManyWithoutUserNestedInput, {
+    nullable: true,
+  })
+  resources?: ResourceUncheckedUpdateManyWithoutUserNestedInput;
 }

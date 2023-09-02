@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneResourceArgs {
-
-    @Field(() => ResourceCreateInput, {nullable:false})
-    @Type(() => ResourceCreateInput)
-    data!: ResourceCreateInput;
+  @Field(() => ResourceCreateInput, { nullable: false })
+  @Type(() => ResourceCreateInput)
+  data!: ResourceCreateInput;
 }

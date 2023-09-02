@@ -6,12 +6,11 @@ import { ResourceWhereInput } from './resource-where.input';
 
 @ArgsType()
 export class UpdateManyResourceArgs {
+  @Field(() => ResourceUpdateManyMutationInput, { nullable: false })
+  @Type(() => ResourceUpdateManyMutationInput)
+  data!: ResourceUpdateManyMutationInput;
 
-    @Field(() => ResourceUpdateManyMutationInput, {nullable:false})
-    @Type(() => ResourceUpdateManyMutationInput)
-    data!: ResourceUpdateManyMutationInput;
-
-    @Field(() => ResourceWhereInput, {nullable:true})
-    @Type(() => ResourceWhereInput)
-    where?: ResourceWhereInput;
+  @Field(() => ResourceWhereInput, { nullable: true })
+  @Type(() => ResourceWhereInput)
+  where?: ResourceWhereInput;
 }

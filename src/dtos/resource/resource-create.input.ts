@@ -5,19 +5,18 @@ import { UserCreateNestedOneWithoutResourcesInput } from '../user/user-create-ne
 
 @InputType()
 export class ResourceCreateInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => ResourceType, { nullable: false })
+  resourceType!: keyof typeof ResourceType;
 
-    @Field(() => ResourceType, {nullable:false})
-    resourceType!: keyof typeof ResourceType;
-
-    @Field(() => UserCreateNestedOneWithoutResourcesInput, {nullable:true})
-    user?: UserCreateNestedOneWithoutResourcesInput;
+  @Field(() => UserCreateNestedOneWithoutResourcesInput, { nullable: true })
+  user?: UserCreateNestedOneWithoutResourcesInput;
 }

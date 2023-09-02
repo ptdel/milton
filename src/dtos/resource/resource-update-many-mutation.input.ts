@@ -7,16 +7,15 @@ import { EnumResourceTypeFieldUpdateOperationsInput } from '../prisma/enum-resou
 
 @InputType()
 export class ResourceUpdateManyMutationInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
 
-    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
-
-    @Field(() => EnumResourceTypeFieldUpdateOperationsInput, {nullable:true})
-    resourceType?: EnumResourceTypeFieldUpdateOperationsInput;
+  @Field(() => EnumResourceTypeFieldUpdateOperationsInput, { nullable: true })
+  resourceType?: EnumResourceTypeFieldUpdateOperationsInput;
 }

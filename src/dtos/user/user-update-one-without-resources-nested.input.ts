@@ -11,32 +11,33 @@ import { UserUpdateToOneWithWhereWithoutResourcesInput } from './user-update-to-
 
 @InputType()
 export class UserUpdateOneWithoutResourcesNestedInput {
+  @Field(() => UserCreateWithoutResourcesInput, { nullable: true })
+  @Type(() => UserCreateWithoutResourcesInput)
+  create?: UserCreateWithoutResourcesInput;
 
-    @Field(() => UserCreateWithoutResourcesInput, {nullable:true})
-    @Type(() => UserCreateWithoutResourcesInput)
-    create?: UserCreateWithoutResourcesInput;
+  @Field(() => UserCreateOrConnectWithoutResourcesInput, { nullable: true })
+  @Type(() => UserCreateOrConnectWithoutResourcesInput)
+  connectOrCreate?: UserCreateOrConnectWithoutResourcesInput;
 
-    @Field(() => UserCreateOrConnectWithoutResourcesInput, {nullable:true})
-    @Type(() => UserCreateOrConnectWithoutResourcesInput)
-    connectOrCreate?: UserCreateOrConnectWithoutResourcesInput;
+  @Field(() => UserUpsertWithoutResourcesInput, { nullable: true })
+  @Type(() => UserUpsertWithoutResourcesInput)
+  upsert?: UserUpsertWithoutResourcesInput;
 
-    @Field(() => UserUpsertWithoutResourcesInput, {nullable:true})
-    @Type(() => UserUpsertWithoutResourcesInput)
-    upsert?: UserUpsertWithoutResourcesInput;
+  @Field(() => UserWhereInput, { nullable: true })
+  @Type(() => UserWhereInput)
+  disconnect?: UserWhereInput;
 
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    disconnect?: UserWhereInput;
+  @Field(() => UserWhereInput, { nullable: true })
+  @Type(() => UserWhereInput)
+  delete?: UserWhereInput;
 
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    delete?: UserWhereInput;
+  @Field(() => UserWhereUniqueInput, { nullable: true })
+  @Type(() => UserWhereUniqueInput)
+  connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id'>;
 
-    @Field(() => UserWhereUniqueInput, {nullable:true})
-    @Type(() => UserWhereUniqueInput)
-    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id'>;
-
-    @Field(() => UserUpdateToOneWithWhereWithoutResourcesInput, {nullable:true})
-    @Type(() => UserUpdateToOneWithWhereWithoutResourcesInput)
-    update?: UserUpdateToOneWithWhereWithoutResourcesInput;
+  @Field(() => UserUpdateToOneWithWhereWithoutResourcesInput, {
+    nullable: true,
+  })
+  @Type(() => UserUpdateToOneWithWhereWithoutResourcesInput)
+  update?: UserUpdateToOneWithWhereWithoutResourcesInput;
 }

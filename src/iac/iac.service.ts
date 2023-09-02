@@ -4,16 +4,21 @@ import {
   LocalWorkspace,
   PulumiFn,
   StackAlreadyExistsError,
+  StackSummary,
   UpResult,
 } from '@pulumi/pulumi/automation';
 import { faker as f } from '@faker-js/faker';
+import { WorkspaceFactory, WorkspaceType } from './iac.factory';
 
 @Injectable()
 export class IacService {
+  private readonly factory: WorkspaceFactory;
   /**
    * A Service for Interacting with Pulumi.
    */
-  constructor(private readonly configService: ConfigService) {}
+  constructor(private readonly configService: ConfigService) {
+      this.factory = new WorkspaceFactory(this.configService, WorkspaceType.Local)
+  }
 
   async createStack(program: PulumiFn): Promise<UpResult> {
     /**
@@ -35,12 +40,9 @@ export class IacService {
       .toLowerCase()
       .replace(' ', '-');
     try {
-      const stack = await LocalWorkspace.createStack({
-        projectName: this.configService.get<string>('app.name'),
-        stackName,
-        program,
-      });
-      const result = await stack.up({ onOutput: console.info });
+      const workspace = await this.factory.new(program)
+      const stack = await workspace.createStack(stackName, program);
+      const result = 
       return result;
     } catch (e) {
       if (e instanceof StackAlreadyExistsError) {
@@ -51,5 +53,21 @@ export class IacService {
     }
   }
 
-  async listStacks(): Promise<void> {}
+  async listStacks(): Promise<StackSummary[]> {
+    /**
+     *
+     */
+    try {
+      const workspace = await LocalWorkspace.create({
+        projectSettings: {
+          name: this.configService.get<string>('app.name'),
+          runtime: 'nodejs',
+        },
+      });
+      const stacks = await workspace.listStacks();
+      return stacks;
+    } catch (e) {
+      throw e;
+    }
+  }
 }

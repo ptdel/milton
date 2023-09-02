@@ -7,12 +7,11 @@ import { ResourceUpdateWithoutUserInput } from './resource-update-without-user.i
 
 @InputType()
 export class ResourceUpdateWithWhereUniqueWithoutUserInput {
+  @Field(() => ResourceWhereUniqueInput, { nullable: false })
+  @Type(() => ResourceWhereUniqueInput)
+  where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 
-    @Field(() => ResourceWhereUniqueInput, {nullable:false})
-    @Type(() => ResourceWhereUniqueInput)
-    where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
-
-    @Field(() => ResourceUpdateWithoutUserInput, {nullable:false})
-    @Type(() => ResourceUpdateWithoutUserInput)
-    data!: ResourceUpdateWithoutUserInput;
+  @Field(() => ResourceUpdateWithoutUserInput, { nullable: false })
+  @Type(() => ResourceUpdateWithoutUserInput)
+  data!: ResourceUpdateWithoutUserInput;
 }

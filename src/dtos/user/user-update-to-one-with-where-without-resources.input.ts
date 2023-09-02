@@ -6,12 +6,11 @@ import { UserUpdateWithoutResourcesInput } from './user-update-without-resources
 
 @InputType()
 export class UserUpdateToOneWithWhereWithoutResourcesInput {
+  @Field(() => UserWhereInput, { nullable: true })
+  @Type(() => UserWhereInput)
+  where?: UserWhereInput;
 
-    @Field(() => UserWhereInput, {nullable:true})
-    @Type(() => UserWhereInput)
-    where?: UserWhereInput;
-
-    @Field(() => UserUpdateWithoutResourcesInput, {nullable:false})
-    @Type(() => UserUpdateWithoutResourcesInput)
-    data!: UserUpdateWithoutResourcesInput;
+  @Field(() => UserUpdateWithoutResourcesInput, { nullable: false })
+  @Type(() => UserUpdateWithoutResourcesInput)
+  data!: UserUpdateWithoutResourcesInput;
 }

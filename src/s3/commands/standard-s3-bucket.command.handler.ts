@@ -22,6 +22,13 @@ export class StandardS3BucketCommandHandler
   }
 
   private standardS3Bucket(name: string): PulumiFn {
+    /**
+     * `standardS3Bucket` is an inline Pulumi program for deploying an s3 bucket
+     *
+     * @remarks You could say that an inline Pulumi program is essentially a
+     * closure. We're passing in values to an inner function that will run with
+     * those values after this handler has closed.
+     */
     return async function (): Promise<Record<string, any> | void> {
       const bucket = new Bucket(name, { tags: { Managed: 'true' } });
       return bucket;

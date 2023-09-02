@@ -9,20 +9,19 @@ import { ResourceWhereUniqueInput } from './resource-where-unique.input';
 
 @InputType()
 export class ResourceUncheckedCreateNestedManyWithoutUserInput {
+  @Field(() => [ResourceCreateWithoutUserInput], { nullable: true })
+  @Type(() => ResourceCreateWithoutUserInput)
+  create?: Array<ResourceCreateWithoutUserInput>;
 
-    @Field(() => [ResourceCreateWithoutUserInput], {nullable:true})
-    @Type(() => ResourceCreateWithoutUserInput)
-    create?: Array<ResourceCreateWithoutUserInput>;
+  @Field(() => [ResourceCreateOrConnectWithoutUserInput], { nullable: true })
+  @Type(() => ResourceCreateOrConnectWithoutUserInput)
+  connectOrCreate?: Array<ResourceCreateOrConnectWithoutUserInput>;
 
-    @Field(() => [ResourceCreateOrConnectWithoutUserInput], {nullable:true})
-    @Type(() => ResourceCreateOrConnectWithoutUserInput)
-    connectOrCreate?: Array<ResourceCreateOrConnectWithoutUserInput>;
+  @Field(() => ResourceCreateManyUserInputEnvelope, { nullable: true })
+  @Type(() => ResourceCreateManyUserInputEnvelope)
+  createMany?: ResourceCreateManyUserInputEnvelope;
 
-    @Field(() => ResourceCreateManyUserInputEnvelope, {nullable:true})
-    @Type(() => ResourceCreateManyUserInputEnvelope)
-    createMany?: ResourceCreateManyUserInputEnvelope;
-
-    @Field(() => [ResourceWhereUniqueInput], {nullable:true})
-    @Type(() => ResourceWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
+  @Field(() => [ResourceWhereUniqueInput], { nullable: true })
+  @Type(() => ResourceWhereUniqueInput)
+  connect?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
 }
