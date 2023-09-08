@@ -2,25 +2,21 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import {
   LocalWorkspace,
+  OutputMap,
   PulumiFn,
   StackAlreadyExistsError,
   StackSummary,
-  UpResult,
 } from '@pulumi/pulumi/automation';
 import { faker as f } from '@faker-js/faker';
-import { WorkspaceFactory, WorkspaceType } from './iac.factory';
 
 @Injectable()
 export class IacService {
-  private readonly factory: WorkspaceFactory;
   /**
    * A Service for Interacting with Pulumi.
    */
-  constructor(private readonly configService: ConfigService) {
-      this.factory = new WorkspaceFactory(this.configService, WorkspaceType.Local)
-  }
+  constructor(private readonly configService: ConfigService) {}
 
-  async createStack(program: PulumiFn): Promise<UpResult> {
+  async createStack(program: PulumiFn): Promise<OutputMap> {
     /**
      * Given a `stackName` and `program` as inputs, this function will
      * attempt to invoke the program, and return the outputs that are the
@@ -40,10 +36,13 @@ export class IacService {
       .toLowerCase()
       .replace(' ', '-');
     try {
-      const workspace = await this.factory.new(program)
-      const stack = await workspace.createStack(stackName, program);
-      const result = 
-      return result;
+      const stack = await LocalWorkspace.createStack({
+        projectName: this.configService.get<string>('app.name'),
+        stackName,
+        program,
+      });
+      const response = await stack.up({ onOutput: console.info });
+      return response.outputs;
     } catch (e) {
       if (e instanceof StackAlreadyExistsError) {
         throw new ConflictException('Stack already exists');

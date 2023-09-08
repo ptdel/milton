@@ -29,14 +29,18 @@
     "@nestjs/core": "^10.0.0",
     "@nestjs/cqrs": "^10.2.5",
     "@nestjs/graphql": "^12.0.8",
-    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/microservices": "^10.2.4",
+    "@nestjs/platform-express": "^10.2.4",
+    "@nestjs/platform-ws": "^10.2.4",
     "@nestjs/swagger": "^7.1.8",
+    "@nestjs/websockets": "^10.2.4",
     "@prisma/client": "^5.2.0",
     "@pulumi/aws": "^5.42.0",
     "@pulumi/policy": "^1.7.0",
     "@pulumi/pulumi": "^3.78.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "ioredis": "^5.3.2",
     "nest": "^0.1.6",
     "nest-winston": "^1.9.3",
     "prisma-erd-generator": "^1.11.0",
@@ -45,7 +49,8 @@
     "rxjs": "^7.8.1",
     "uuid": "^9.0.0",
     "winston": "^3.10.0",
-    "winston-syslog": "^2.7.0"
+    "winston-syslog": "^2.7.0",
+    "ws": "^8.14.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -55,6 +60,7 @@
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
     "@types/supertest": "^2.0.12",
+    "@types/ws": "^8.5.5",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "commitlint": "^17.7.1",
@@ -97,5 +103,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^6.0.3"
   }
 }

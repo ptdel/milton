@@ -5,6 +5,7 @@ import { utilities as win, WinstonModule } from 'nest-winston';
 import * as winston from 'winston';
 import logConfig from './config/log.config';
 import { S3Module } from './s3/s3.module';
+import { NotifyModule } from './notify/notify.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { S3Module } from './s3/s3.module';
       }),
     }),
     S3Module,
+    NotifyModule,
   ],
   controllers: [],
   providers: [],
