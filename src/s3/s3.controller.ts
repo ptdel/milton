@@ -5,8 +5,8 @@ import {
   ApiOperation,
 } from '@nestjs/swagger';
 import { StandardS3BucketCommand } from './commands/standard-s3-bucket.command';
-import { LoggingInterceptor } from 'src/interceptors/logging.interceptor';
-import { QueueService } from 'src/queue/queue.service';
+import { LoggingInterceptor } from '../interceptors/logging.interceptor';
+import { QueueService } from '../queue/queue.service';
 import { EventPattern, Payload } from '@nestjs/microservices';
 import { CommandBus } from '@nestjs/cqrs';
 

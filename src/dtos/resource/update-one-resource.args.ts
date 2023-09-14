@@ -7,11 +7,12 @@ import { ResourceWhereUniqueInput } from './resource-where-unique.input';
 
 @ArgsType()
 export class UpdateOneResourceArgs {
-  @Field(() => ResourceUpdateInput, { nullable: false })
-  @Type(() => ResourceUpdateInput)
-  data!: ResourceUpdateInput;
 
-  @Field(() => ResourceWhereUniqueInput, { nullable: false })
-  @Type(() => ResourceWhereUniqueInput)
-  where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
+    @Field(() => ResourceUpdateInput, {nullable:false})
+    @Type(() => ResourceUpdateInput)
+    data!: ResourceUpdateInput;
+
+    @Field(() => ResourceWhereUniqueInput, {nullable:false})
+    @Type(() => ResourceWhereUniqueInput)
+    where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 }

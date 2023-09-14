@@ -7,24 +7,25 @@ import { NestedEnumResourceTypeFilter } from './nested-enum-resource-type-filter
 
 @InputType()
 export class EnumResourceTypeWithAggregatesFilter {
-  @Field(() => ResourceType, { nullable: true })
-  equals?: keyof typeof ResourceType;
 
-  @Field(() => [ResourceType], { nullable: true })
-  in?: Array<keyof typeof ResourceType>;
+    @Field(() => ResourceType, {nullable:true})
+    equals?: keyof typeof ResourceType;
 
-  @Field(() => [ResourceType], { nullable: true })
-  notIn?: Array<keyof typeof ResourceType>;
+    @Field(() => [ResourceType], {nullable:true})
+    in?: Array<keyof typeof ResourceType>;
 
-  @Field(() => NestedEnumResourceTypeWithAggregatesFilter, { nullable: true })
-  not?: NestedEnumResourceTypeWithAggregatesFilter;
+    @Field(() => [ResourceType], {nullable:true})
+    notIn?: Array<keyof typeof ResourceType>;
 
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: NestedIntFilter;
+    @Field(() => NestedEnumResourceTypeWithAggregatesFilter, {nullable:true})
+    not?: NestedEnumResourceTypeWithAggregatesFilter;
 
-  @Field(() => NestedEnumResourceTypeFilter, { nullable: true })
-  _min?: NestedEnumResourceTypeFilter;
+    @Field(() => NestedIntFilter, {nullable:true})
+    _count?: NestedIntFilter;
 
-  @Field(() => NestedEnumResourceTypeFilter, { nullable: true })
-  _max?: NestedEnumResourceTypeFilter;
+    @Field(() => NestedEnumResourceTypeFilter, {nullable:true})
+    _min?: NestedEnumResourceTypeFilter;
+
+    @Field(() => NestedEnumResourceTypeFilter, {nullable:true})
+    _max?: NestedEnumResourceTypeFilter;
 }

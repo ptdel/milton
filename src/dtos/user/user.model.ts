@@ -6,21 +6,22 @@ import { UserCount } from './user-count.output';
 
 @ObjectType()
 export class User {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt!: Date | null;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Date, {nullable:true})
+    updatedAt!: Date | null;
 
-  @Field(() => [Resource], { nullable: true })
-  resources?: Array<Resource>;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => UserCount, { nullable: false })
-  _count?: UserCount;
+    @Field(() => [Resource], {nullable:true})
+    resources?: Array<Resource>;
+
+    @Field(() => UserCount, {nullable:false})
+    _count?: UserCount;
 }

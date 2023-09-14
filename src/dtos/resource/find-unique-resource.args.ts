@@ -6,7 +6,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueResourceArgs {
-  @Field(() => ResourceWhereUniqueInput, { nullable: false })
-  @Type(() => ResourceWhereUniqueInput)
-  where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
+
+    @Field(() => ResourceWhereUniqueInput, {nullable:false})
+    @Type(() => ResourceWhereUniqueInput)
+    where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 }

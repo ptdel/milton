@@ -13,53 +13,48 @@ import { ResourceScalarWhereInput } from './resource-scalar-where.input';
 
 @InputType()
 export class ResourceUpdateManyWithoutUserNestedInput {
-  @Field(() => [ResourceCreateWithoutUserInput], { nullable: true })
-  @Type(() => ResourceCreateWithoutUserInput)
-  create?: Array<ResourceCreateWithoutUserInput>;
 
-  @Field(() => [ResourceCreateOrConnectWithoutUserInput], { nullable: true })
-  @Type(() => ResourceCreateOrConnectWithoutUserInput)
-  connectOrCreate?: Array<ResourceCreateOrConnectWithoutUserInput>;
+    @Field(() => [ResourceCreateWithoutUserInput], {nullable:true})
+    @Type(() => ResourceCreateWithoutUserInput)
+    create?: Array<ResourceCreateWithoutUserInput>;
 
-  @Field(() => [ResourceUpsertWithWhereUniqueWithoutUserInput], {
-    nullable: true,
-  })
-  @Type(() => ResourceUpsertWithWhereUniqueWithoutUserInput)
-  upsert?: Array<ResourceUpsertWithWhereUniqueWithoutUserInput>;
+    @Field(() => [ResourceCreateOrConnectWithoutUserInput], {nullable:true})
+    @Type(() => ResourceCreateOrConnectWithoutUserInput)
+    connectOrCreate?: Array<ResourceCreateOrConnectWithoutUserInput>;
 
-  @Field(() => ResourceCreateManyUserInputEnvelope, { nullable: true })
-  @Type(() => ResourceCreateManyUserInputEnvelope)
-  createMany?: ResourceCreateManyUserInputEnvelope;
+    @Field(() => [ResourceUpsertWithWhereUniqueWithoutUserInput], {nullable:true})
+    @Type(() => ResourceUpsertWithWhereUniqueWithoutUserInput)
+    upsert?: Array<ResourceUpsertWithWhereUniqueWithoutUserInput>;
 
-  @Field(() => [ResourceWhereUniqueInput], { nullable: true })
-  @Type(() => ResourceWhereUniqueInput)
-  set?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
+    @Field(() => ResourceCreateManyUserInputEnvelope, {nullable:true})
+    @Type(() => ResourceCreateManyUserInputEnvelope)
+    createMany?: ResourceCreateManyUserInputEnvelope;
 
-  @Field(() => [ResourceWhereUniqueInput], { nullable: true })
-  @Type(() => ResourceWhereUniqueInput)
-  disconnect?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
+    @Field(() => [ResourceWhereUniqueInput], {nullable:true})
+    @Type(() => ResourceWhereUniqueInput)
+    set?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
 
-  @Field(() => [ResourceWhereUniqueInput], { nullable: true })
-  @Type(() => ResourceWhereUniqueInput)
-  delete?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
+    @Field(() => [ResourceWhereUniqueInput], {nullable:true})
+    @Type(() => ResourceWhereUniqueInput)
+    disconnect?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
 
-  @Field(() => [ResourceWhereUniqueInput], { nullable: true })
-  @Type(() => ResourceWhereUniqueInput)
-  connect?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
+    @Field(() => [ResourceWhereUniqueInput], {nullable:true})
+    @Type(() => ResourceWhereUniqueInput)
+    delete?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
 
-  @Field(() => [ResourceUpdateWithWhereUniqueWithoutUserInput], {
-    nullable: true,
-  })
-  @Type(() => ResourceUpdateWithWhereUniqueWithoutUserInput)
-  update?: Array<ResourceUpdateWithWhereUniqueWithoutUserInput>;
+    @Field(() => [ResourceWhereUniqueInput], {nullable:true})
+    @Type(() => ResourceWhereUniqueInput)
+    connect?: Array<Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>>;
 
-  @Field(() => [ResourceUpdateManyWithWhereWithoutUserInput], {
-    nullable: true,
-  })
-  @Type(() => ResourceUpdateManyWithWhereWithoutUserInput)
-  updateMany?: Array<ResourceUpdateManyWithWhereWithoutUserInput>;
+    @Field(() => [ResourceUpdateWithWhereUniqueWithoutUserInput], {nullable:true})
+    @Type(() => ResourceUpdateWithWhereUniqueWithoutUserInput)
+    update?: Array<ResourceUpdateWithWhereUniqueWithoutUserInput>;
 
-  @Field(() => [ResourceScalarWhereInput], { nullable: true })
-  @Type(() => ResourceScalarWhereInput)
-  deleteMany?: Array<ResourceScalarWhereInput>;
+    @Field(() => [ResourceUpdateManyWithWhereWithoutUserInput], {nullable:true})
+    @Type(() => ResourceUpdateManyWithWhereWithoutUserInput)
+    updateMany?: Array<ResourceUpdateManyWithWhereWithoutUserInput>;
+
+    @Field(() => [ResourceScalarWhereInput], {nullable:true})
+    @Type(() => ResourceScalarWhereInput)
+    deleteMany?: Array<ResourceScalarWhereInput>;
 }

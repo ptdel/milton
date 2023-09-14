@@ -5,10 +5,11 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ResourceCreateManyUserInputEnvelope {
-  @Field(() => [ResourceCreateManyUserInput], { nullable: false })
-  @Type(() => ResourceCreateManyUserInput)
-  data!: Array<ResourceCreateManyUserInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [ResourceCreateManyUserInput], {nullable:false})
+    @Type(() => ResourceCreateManyUserInput)
+    data!: Array<ResourceCreateManyUserInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

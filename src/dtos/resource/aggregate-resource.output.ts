@@ -6,12 +6,13 @@ import { ResourceMaxAggregate } from './resource-max-aggregate.output';
 
 @ObjectType()
 export class AggregateResource {
-  @Field(() => ResourceCountAggregate, { nullable: true })
-  _count?: ResourceCountAggregate;
 
-  @Field(() => ResourceMinAggregate, { nullable: true })
-  _min?: ResourceMinAggregate;
+    @Field(() => ResourceCountAggregate, {nullable:true})
+    _count?: ResourceCountAggregate;
 
-  @Field(() => ResourceMaxAggregate, { nullable: true })
-  _max?: ResourceMaxAggregate;
+    @Field(() => ResourceMinAggregate, {nullable:true})
+    _min?: ResourceMinAggregate;
+
+    @Field(() => ResourceMaxAggregate, {nullable:true})
+    _max?: ResourceMaxAggregate;
 }

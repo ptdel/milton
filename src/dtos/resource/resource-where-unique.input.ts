@@ -9,30 +9,31 @@ import { UserNullableRelationFilter } from '../user/user-nullable-relation-filte
 
 @InputType()
 export class ResourceWhereUniqueInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => [ResourceWhereInput], { nullable: true })
-  AND?: Array<ResourceWhereInput>;
+    @Field(() => String, {nullable:true})
+    id?: string;
 
-  @Field(() => [ResourceWhereInput], { nullable: true })
-  OR?: Array<ResourceWhereInput>;
+    @Field(() => [ResourceWhereInput], {nullable:true})
+    AND?: Array<ResourceWhereInput>;
 
-  @Field(() => [ResourceWhereInput], { nullable: true })
-  NOT?: Array<ResourceWhereInput>;
+    @Field(() => [ResourceWhereInput], {nullable:true})
+    OR?: Array<ResourceWhereInput>;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => [ResourceWhereInput], {nullable:true})
+    NOT?: Array<ResourceWhereInput>;
 
-  @Field(() => DateTimeNullableFilter, { nullable: true })
-  updatedAt?: DateTimeNullableFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => EnumResourceTypeFilter, { nullable: true })
-  resourceType?: EnumResourceTypeFilter;
+    @Field(() => DateTimeNullableFilter, {nullable:true})
+    updatedAt?: DateTimeNullableFilter;
 
-  @Field(() => StringNullableFilter, { nullable: true })
-  userId?: StringNullableFilter;
+    @Field(() => EnumResourceTypeFilter, {nullable:true})
+    resourceType?: EnumResourceTypeFilter;
 
-  @Field(() => UserNullableRelationFilter, { nullable: true })
-  user?: UserNullableRelationFilter;
+    @Field(() => StringNullableFilter, {nullable:true})
+    userId?: StringNullableFilter;
+
+    @Field(() => UserNullableRelationFilter, {nullable:true})
+    user?: UserNullableRelationFilter;
 }

@@ -6,11 +6,12 @@ import { ResourceUpdateManyMutationInput } from './resource-update-many-mutation
 
 @InputType()
 export class ResourceUpdateManyWithWhereWithoutUserInput {
-  @Field(() => ResourceScalarWhereInput, { nullable: false })
-  @Type(() => ResourceScalarWhereInput)
-  where!: ResourceScalarWhereInput;
 
-  @Field(() => ResourceUpdateManyMutationInput, { nullable: false })
-  @Type(() => ResourceUpdateManyMutationInput)
-  data!: ResourceUpdateManyMutationInput;
+    @Field(() => ResourceScalarWhereInput, {nullable:false})
+    @Type(() => ResourceScalarWhereInput)
+    where!: ResourceScalarWhereInput;
+
+    @Field(() => ResourceUpdateManyMutationInput, {nullable:false})
+    @Type(() => ResourceUpdateManyMutationInput)
+    data!: ResourceUpdateManyMutationInput;
 }

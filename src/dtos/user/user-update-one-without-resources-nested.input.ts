@@ -11,33 +11,32 @@ import { UserUpdateToOneWithWhereWithoutResourcesInput } from './user-update-to-
 
 @InputType()
 export class UserUpdateOneWithoutResourcesNestedInput {
-  @Field(() => UserCreateWithoutResourcesInput, { nullable: true })
-  @Type(() => UserCreateWithoutResourcesInput)
-  create?: UserCreateWithoutResourcesInput;
 
-  @Field(() => UserCreateOrConnectWithoutResourcesInput, { nullable: true })
-  @Type(() => UserCreateOrConnectWithoutResourcesInput)
-  connectOrCreate?: UserCreateOrConnectWithoutResourcesInput;
+    @Field(() => UserCreateWithoutResourcesInput, {nullable:true})
+    @Type(() => UserCreateWithoutResourcesInput)
+    create?: UserCreateWithoutResourcesInput;
 
-  @Field(() => UserUpsertWithoutResourcesInput, { nullable: true })
-  @Type(() => UserUpsertWithoutResourcesInput)
-  upsert?: UserUpsertWithoutResourcesInput;
+    @Field(() => UserCreateOrConnectWithoutResourcesInput, {nullable:true})
+    @Type(() => UserCreateOrConnectWithoutResourcesInput)
+    connectOrCreate?: UserCreateOrConnectWithoutResourcesInput;
 
-  @Field(() => UserWhereInput, { nullable: true })
-  @Type(() => UserWhereInput)
-  disconnect?: UserWhereInput;
+    @Field(() => UserUpsertWithoutResourcesInput, {nullable:true})
+    @Type(() => UserUpsertWithoutResourcesInput)
+    upsert?: UserUpsertWithoutResourcesInput;
 
-  @Field(() => UserWhereInput, { nullable: true })
-  @Type(() => UserWhereInput)
-  delete?: UserWhereInput;
+    @Field(() => UserWhereInput, {nullable:true})
+    @Type(() => UserWhereInput)
+    disconnect?: UserWhereInput;
 
-  @Field(() => UserWhereUniqueInput, { nullable: true })
-  @Type(() => UserWhereUniqueInput)
-  connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id'>;
+    @Field(() => UserWhereInput, {nullable:true})
+    @Type(() => UserWhereInput)
+    delete?: UserWhereInput;
 
-  @Field(() => UserUpdateToOneWithWhereWithoutResourcesInput, {
-    nullable: true,
-  })
-  @Type(() => UserUpdateToOneWithWhereWithoutResourcesInput)
-  update?: UserUpdateToOneWithWhereWithoutResourcesInput;
+    @Field(() => UserWhereUniqueInput, {nullable:true})
+    @Type(() => UserWhereUniqueInput)
+    connect?: Prisma.AtLeast<UserWhereUniqueInput, 'id'>;
+
+    @Field(() => UserUpdateToOneWithWhereWithoutResourcesInput, {nullable:true})
+    @Type(() => UserUpdateToOneWithWhereWithoutResourcesInput)
+    update?: UserUpdateToOneWithWhereWithoutResourcesInput;
 }

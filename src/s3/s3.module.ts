@@ -4,9 +4,9 @@ import { CommandHandlers } from './commands';
 import { QueryHandlers } from './queries';
 import { DatabaseModule } from '../db/database.module';
 import { CqrsModule } from '@nestjs/cqrs';
-import { IacModule } from 'src/iac/iac.module';
-import { QueueModule } from 'src/queue/queue.module';
-import { NotifyModule } from 'src/notify/notify.module';
+import { IacModule } from '../iac/iac.module';
+import { QueueModule } from '../queue/queue.module';
+import { NotifyModule } from '../notify/notify.module';
 
 @Module({
   imports: [IacModule, QueueModule, NotifyModule, DatabaseModule, CqrsModule],

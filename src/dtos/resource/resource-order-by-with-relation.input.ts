@@ -6,21 +6,22 @@ import { UserOrderByWithRelationInput } from '../user/user-order-by-with-relatio
 
 @InputType()
 export class ResourceOrderByWithRelationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrderInput, { nullable: true })
-  updatedAt?: SortOrderInput;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  resourceType?: keyof typeof SortOrder;
+    @Field(() => SortOrderInput, {nullable:true})
+    updatedAt?: SortOrderInput;
 
-  @Field(() => SortOrderInput, { nullable: true })
-  userId?: SortOrderInput;
+    @Field(() => SortOrder, {nullable:true})
+    resourceType?: keyof typeof SortOrder;
 
-  @Field(() => UserOrderByWithRelationInput, { nullable: true })
-  user?: UserOrderByWithRelationInput;
+    @Field(() => SortOrderInput, {nullable:true})
+    userId?: SortOrderInput;
+
+    @Field(() => UserOrderByWithRelationInput, {nullable:true})
+    user?: UserOrderByWithRelationInput;
 }

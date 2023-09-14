@@ -10,22 +10,23 @@ import { ResourceScalarFieldEnum } from './resource-scalar-field.enum';
 
 @ArgsType()
 export class FindManyResourceArgs {
-  @Field(() => ResourceWhereInput, { nullable: true })
-  @Type(() => ResourceWhereInput)
-  where?: ResourceWhereInput;
 
-  @Field(() => [ResourceOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<ResourceOrderByWithRelationInput>;
+    @Field(() => ResourceWhereInput, {nullable:true})
+    @Type(() => ResourceWhereInput)
+    where?: ResourceWhereInput;
 
-  @Field(() => ResourceWhereUniqueInput, { nullable: true })
-  cursor?: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
+    @Field(() => [ResourceOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<ResourceOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ResourceWhereUniqueInput, {nullable:true})
+    cursor?: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [ResourceScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof ResourceScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [ResourceScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof ResourceScalarFieldEnum>;
 }

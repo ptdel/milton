@@ -37,7 +37,7 @@ export class IacService {
       .replace(' ', '-');
     try {
       const stack = await LocalWorkspace.createStack({
-        projectName: this.configService.get<string>('app.name'),
+        projectName: this.configService.get<string>('app.name') ?? 'milton',
         stackName,
         program,
       });
@@ -59,7 +59,8 @@ export class IacService {
     try {
       const workspace = await LocalWorkspace.create({
         projectSettings: {
-          name: this.configService.get<string>('app.name'),
+          name:
+            this.configService.get<string>('app.name') ?? 'default-workspace',
           runtime: 'nodejs',
         },
       });

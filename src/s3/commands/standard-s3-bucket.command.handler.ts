@@ -1,9 +1,9 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { StandardS3BucketCommand } from './standard-s3-bucket.command';
-import { IacService } from 'src/iac/iac.service';
+import { IacService } from '../../iac/iac.service';
 import { Bucket } from '@pulumi/aws/s3';
 import { OutputMap, PulumiFn } from '@pulumi/pulumi/automation';
-import { NotifyGateway } from 'src/notify/notify.gateway';
+import { NotifyGateway } from '../../notify/notify.gateway';
 
 @CommandHandler(StandardS3BucketCommand)
 export class StandardS3BucketCommandHandler
@@ -19,7 +19,7 @@ export class StandardS3BucketCommandHandler
 
     try {
       const bucket = await this.iac.createStack(this.standardS3Bucket(name));
-      this.notify.server.clients.forEach((client) => {
+      this.notify.server.clients.forEach((client: any) => {
         if (client.OPEN) {
           client.send(`${bucket.bucket.value} has been created!`);
         }

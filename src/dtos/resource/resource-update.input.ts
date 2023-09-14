@@ -8,18 +8,19 @@ import { UserUpdateOneWithoutResourcesNestedInput } from '../user/user-update-on
 
 @InputType()
 export class ResourceUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => EnumResourceTypeFieldUpdateOperationsInput, { nullable: true })
-  resourceType?: EnumResourceTypeFieldUpdateOperationsInput;
+    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUpdateOneWithoutResourcesNestedInput, { nullable: true })
-  user?: UserUpdateOneWithoutResourcesNestedInput;
+    @Field(() => EnumResourceTypeFieldUpdateOperationsInput, {nullable:true})
+    resourceType?: EnumResourceTypeFieldUpdateOperationsInput;
+
+    @Field(() => UserUpdateOneWithoutResourcesNestedInput, {nullable:true})
+    user?: UserUpdateOneWithoutResourcesNestedInput;
 }

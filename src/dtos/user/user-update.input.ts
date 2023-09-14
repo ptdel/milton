@@ -7,18 +7,19 @@ import { ResourceUpdateManyWithoutUserNestedInput } from '../resource/resource-u
 
 @InputType()
 export class UserUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
 
-  @Field(() => ResourceUpdateManyWithoutUserNestedInput, { nullable: true })
-  resources?: ResourceUpdateManyWithoutUserNestedInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
+
+    @Field(() => ResourceUpdateManyWithoutUserNestedInput, {nullable:true})
+    resources?: ResourceUpdateManyWithoutUserNestedInput;
 }

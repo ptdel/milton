@@ -12,31 +12,32 @@ import { ResourceMaxAggregateInput } from './resource-max-aggregate.input';
 
 @ArgsType()
 export class ResourceGroupByArgs {
-  @Field(() => ResourceWhereInput, { nullable: true })
-  @Type(() => ResourceWhereInput)
-  where?: ResourceWhereInput;
 
-  @Field(() => [ResourceOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<ResourceOrderByWithAggregationInput>;
+    @Field(() => ResourceWhereInput, {nullable:true})
+    @Type(() => ResourceWhereInput)
+    where?: ResourceWhereInput;
 
-  @Field(() => [ResourceScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof ResourceScalarFieldEnum>;
+    @Field(() => [ResourceOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<ResourceOrderByWithAggregationInput>;
 
-  @Field(() => ResourceScalarWhereWithAggregatesInput, { nullable: true })
-  having?: ResourceScalarWhereWithAggregatesInput;
+    @Field(() => [ResourceScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof ResourceScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ResourceScalarWhereWithAggregatesInput, {nullable:true})
+    having?: ResourceScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => ResourceCountAggregateInput, { nullable: true })
-  _count?: ResourceCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => ResourceMinAggregateInput, { nullable: true })
-  _min?: ResourceMinAggregateInput;
+    @Field(() => ResourceCountAggregateInput, {nullable:true})
+    _count?: ResourceCountAggregateInput;
 
-  @Field(() => ResourceMaxAggregateInput, { nullable: true })
-  _max?: ResourceMaxAggregateInput;
+    @Field(() => ResourceMinAggregateInput, {nullable:true})
+    _min?: ResourceMinAggregateInput;
+
+    @Field(() => ResourceMaxAggregateInput, {nullable:true})
+    _max?: ResourceMaxAggregateInput;
 }

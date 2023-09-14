@@ -8,27 +8,28 @@ import { ResourceMinOrderByAggregateInput } from './resource-min-order-by-aggreg
 
 @InputType()
 export class ResourceOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrderInput, { nullable: true })
-  updatedAt?: SortOrderInput;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  resourceType?: keyof typeof SortOrder;
+    @Field(() => SortOrderInput, {nullable:true})
+    updatedAt?: SortOrderInput;
 
-  @Field(() => SortOrderInput, { nullable: true })
-  userId?: SortOrderInput;
+    @Field(() => SortOrder, {nullable:true})
+    resourceType?: keyof typeof SortOrder;
 
-  @Field(() => ResourceCountOrderByAggregateInput, { nullable: true })
-  _count?: ResourceCountOrderByAggregateInput;
+    @Field(() => SortOrderInput, {nullable:true})
+    userId?: SortOrderInput;
 
-  @Field(() => ResourceMaxOrderByAggregateInput, { nullable: true })
-  _max?: ResourceMaxOrderByAggregateInput;
+    @Field(() => ResourceCountOrderByAggregateInput, {nullable:true})
+    _count?: ResourceCountOrderByAggregateInput;
 
-  @Field(() => ResourceMinOrderByAggregateInput, { nullable: true })
-  _min?: ResourceMinOrderByAggregateInput;
+    @Field(() => ResourceMaxOrderByAggregateInput, {nullable:true})
+    _max?: ResourceMaxOrderByAggregateInput;
+
+    @Field(() => ResourceMinOrderByAggregateInput, {nullable:true})
+    _min?: ResourceMinOrderByAggregateInput;
 }

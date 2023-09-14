@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { NotifyGateway } from './notify.gateway';
-import wsConfig from 'src/config/ws.config';
+import wsConfig from '../config/ws.config';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({

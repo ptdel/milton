@@ -7,27 +7,28 @@ import { ResourceMaxAggregate } from './resource-max-aggregate.output';
 
 @ObjectType()
 export class ResourceGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => ResourceType, { nullable: false })
-  resourceType!: keyof typeof ResourceType;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => String, { nullable: true })
-  userId?: string;
+    @Field(() => ResourceType, {nullable:false})
+    resourceType!: keyof typeof ResourceType;
 
-  @Field(() => ResourceCountAggregate, { nullable: true })
-  _count?: ResourceCountAggregate;
+    @Field(() => String, {nullable:true})
+    userId?: string;
 
-  @Field(() => ResourceMinAggregate, { nullable: true })
-  _min?: ResourceMinAggregate;
+    @Field(() => ResourceCountAggregate, {nullable:true})
+    _count?: ResourceCountAggregate;
 
-  @Field(() => ResourceMaxAggregate, { nullable: true })
-  _max?: ResourceMaxAggregate;
+    @Field(() => ResourceMinAggregate, {nullable:true})
+    _min?: ResourceMinAggregate;
+
+    @Field(() => ResourceMaxAggregate, {nullable:true})
+    _max?: ResourceMaxAggregate;
 }

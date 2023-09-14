@@ -7,15 +7,16 @@ import { EnumResourceTypeFieldUpdateOperationsInput } from '../prisma/enum-resou
 
 @InputType()
 export class ResourceUncheckedUpdateManyWithoutUserInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    id?: StringFieldUpdateOperationsInput;
 
-  @Field(() => NullableDateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => EnumResourceTypeFieldUpdateOperationsInput, { nullable: true })
-  resourceType?: EnumResourceTypeFieldUpdateOperationsInput;
+    @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput;
+
+    @Field(() => EnumResourceTypeFieldUpdateOperationsInput, {nullable:true})
+    resourceType?: EnumResourceTypeFieldUpdateOperationsInput;
 }

@@ -8,27 +8,28 @@ import { StringNullableWithAggregatesFilter } from '../prisma/string-nullable-wi
 
 @InputType()
 export class ResourceScalarWhereWithAggregatesInput {
-  @Field(() => [ResourceScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<ResourceScalarWhereWithAggregatesInput>;
 
-  @Field(() => [ResourceScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<ResourceScalarWhereWithAggregatesInput>;
+    @Field(() => [ResourceScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<ResourceScalarWhereWithAggregatesInput>;
 
-  @Field(() => [ResourceScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<ResourceScalarWhereWithAggregatesInput>;
+    @Field(() => [ResourceScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<ResourceScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  id?: StringWithAggregatesFilter;
+    @Field(() => [ResourceScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<ResourceScalarWhereWithAggregatesInput>;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    id?: StringWithAggregatesFilter;
 
-  @Field(() => DateTimeNullableWithAggregatesFilter, { nullable: true })
-  updatedAt?: DateTimeNullableWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => EnumResourceTypeWithAggregatesFilter, { nullable: true })
-  resourceType?: EnumResourceTypeWithAggregatesFilter;
+    @Field(() => DateTimeNullableWithAggregatesFilter, {nullable:true})
+    updatedAt?: DateTimeNullableWithAggregatesFilter;
 
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  userId?: StringNullableWithAggregatesFilter;
+    @Field(() => EnumResourceTypeWithAggregatesFilter, {nullable:true})
+    resourceType?: EnumResourceTypeWithAggregatesFilter;
+
+    @Field(() => StringNullableWithAggregatesFilter, {nullable:true})
+    userId?: StringNullableWithAggregatesFilter;
 }

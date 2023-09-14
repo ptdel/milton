@@ -12,28 +12,29 @@ import { ResourceMaxAggregateInput } from './resource-max-aggregate.input';
 
 @ArgsType()
 export class ResourceAggregateArgs {
-  @Field(() => ResourceWhereInput, { nullable: true })
-  @Type(() => ResourceWhereInput)
-  where?: ResourceWhereInput;
 
-  @Field(() => [ResourceOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<ResourceOrderByWithRelationInput>;
+    @Field(() => ResourceWhereInput, {nullable:true})
+    @Type(() => ResourceWhereInput)
+    where?: ResourceWhereInput;
 
-  @Field(() => ResourceWhereUniqueInput, { nullable: true })
-  cursor?: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
+    @Field(() => [ResourceOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<ResourceOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => ResourceWhereUniqueInput, {nullable:true})
+    cursor?: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => ResourceCountAggregateInput, { nullable: true })
-  _count?: ResourceCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => ResourceMinAggregateInput, { nullable: true })
-  _min?: ResourceMinAggregateInput;
+    @Field(() => ResourceCountAggregateInput, {nullable:true})
+    _count?: ResourceCountAggregateInput;
 
-  @Field(() => ResourceMaxAggregateInput, { nullable: true })
-  _max?: ResourceMaxAggregateInput;
+    @Field(() => ResourceMinAggregateInput, {nullable:true})
+    _min?: ResourceMinAggregateInput;
+
+    @Field(() => ResourceMaxAggregateInput, {nullable:true})
+    _max?: ResourceMaxAggregateInput;
 }

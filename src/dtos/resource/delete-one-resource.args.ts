@@ -6,7 +6,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneResourceArgs {
-  @Field(() => ResourceWhereUniqueInput, { nullable: false })
-  @Type(() => ResourceWhereUniqueInput)
-  where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
+
+    @Field(() => ResourceWhereUniqueInput, {nullable:false})
+    @Type(() => ResourceWhereUniqueInput)
+    where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 }

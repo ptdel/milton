@@ -7,7 +7,7 @@ export class QueueService {
 
   async publish<T>(data: T): Promise<void> {
     try {
-      this.client.emit(data.constructor.name, data);
+      this.client.emit(typeof data, data);
     } catch (e) {
       throw e;
     }

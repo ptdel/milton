@@ -10,7 +10,7 @@ cd "$repository_root"
 
 # any time we need a new project dependency that isn't some node
 # package we should add it to this list
-dependencies=(git docker docker-compose yarn)
+dependencies=(git docker docker-compose bun)
 
 ## Functions
 
@@ -81,10 +81,10 @@ migrate_sql_database() {
     echo "Migrating database schema..."
     # checks to see if the prisma client has already been generated
     if [[ ! -f ./node_modules/prisma ]]; then
-	yarn prisma generate
+	bun prisma generate
     fi
 
-    yarn prisma migrate dev
+    bun prisma migrate dev
 
     echo "...database schema migrated."
 }

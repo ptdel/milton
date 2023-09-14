@@ -6,21 +6,22 @@ import { User } from '../user/user.model';
 
 @ObjectType()
 export class Resource {
-  @Field(() => ID, { nullable: false })
-  id!: string;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => ID, {nullable:false})
+    id!: string;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt!: Date | null;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => ResourceType, { nullable: false })
-  resourceType!: keyof typeof ResourceType;
+    @Field(() => Date, {nullable:true})
+    updatedAt!: Date | null;
 
-  @Field(() => String, { nullable: true })
-  userId!: string | null;
+    @Field(() => ResourceType, {nullable:false})
+    resourceType!: keyof typeof ResourceType;
 
-  @Field(() => User, { nullable: true })
-  user?: User | null;
+    @Field(() => String, {nullable:true})
+    userId!: string | null;
+
+    @Field(() => User, {nullable:true})
+    user?: User | null;
 }

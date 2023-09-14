@@ -8,15 +8,16 @@ import { ResourceCreateWithoutUserInput } from './resource-create-without-user.i
 
 @InputType()
 export class ResourceUpsertWithWhereUniqueWithoutUserInput {
-  @Field(() => ResourceWhereUniqueInput, { nullable: false })
-  @Type(() => ResourceWhereUniqueInput)
-  where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 
-  @Field(() => ResourceUpdateWithoutUserInput, { nullable: false })
-  @Type(() => ResourceUpdateWithoutUserInput)
-  update!: ResourceUpdateWithoutUserInput;
+    @Field(() => ResourceWhereUniqueInput, {nullable:false})
+    @Type(() => ResourceWhereUniqueInput)
+    where!: Prisma.AtLeast<ResourceWhereUniqueInput, 'id'>;
 
-  @Field(() => ResourceCreateWithoutUserInput, { nullable: false })
-  @Type(() => ResourceCreateWithoutUserInput)
-  create!: ResourceCreateWithoutUserInput;
+    @Field(() => ResourceUpdateWithoutUserInput, {nullable:false})
+    @Type(() => ResourceUpdateWithoutUserInput)
+    update!: ResourceUpdateWithoutUserInput;
+
+    @Field(() => ResourceCreateWithoutUserInput, {nullable:false})
+    @Type(() => ResourceCreateWithoutUserInput)
+    create!: ResourceCreateWithoutUserInput;
 }
